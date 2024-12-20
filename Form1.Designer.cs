@@ -28,9 +28,9 @@
         /// </summary>
         private void InitializeComponent()
         {
-            this.FirstName = new System.Windows.Forms.TextBox();
-            this.LastName = new System.Windows.Forms.TextBox();
-            this.textBox1 = new System.Windows.Forms.TextBox();
+            this.textbox = new System.Windows.Forms.TextBox();
+            this.textbox2 = new System.Windows.Forms.TextBox();
+            this.textBox3 = new System.Windows.Forms.TextBox();
             this.label1 = new System.Windows.Forms.Label();
             this.label2 = new System.Windows.Forms.Label();
             this.label3 = new System.Windows.Forms.Label();
@@ -38,26 +38,28 @@
             this.listBox1 = new System.Windows.Forms.ListBox();
             this.SuspendLayout();
             // 
-            // FirstName
+            // textbox
             // 
-            this.FirstName.Location = new System.Drawing.Point(31, 34);
-            this.FirstName.Name = "FirstName";
-            this.FirstName.Size = new System.Drawing.Size(100, 20);
-            this.FirstName.TabIndex = 0;
+            this.textbox.Location = new System.Drawing.Point(31, 34);
+            this.textbox.Name = "textbox";
+            this.textbox.Size = new System.Drawing.Size(100, 20);
+            this.textbox.TabIndex = 0;
+            this.textbox.TextChanged += new System.EventHandler(this.FirstName_TextChanged);
             // 
-            // LastName
+            // textbox2
             // 
-            this.LastName.Location = new System.Drawing.Point(31, 77);
-            this.LastName.Name = "LastName";
-            this.LastName.Size = new System.Drawing.Size(100, 20);
-            this.LastName.TabIndex = 1;
+            this.textbox2.Location = new System.Drawing.Point(31, 77);
+            this.textbox2.Name = "textbox2";
+            this.textbox2.Size = new System.Drawing.Size(100, 20);
+            this.textbox2.TabIndex = 1;
+            this.textbox2.TextChanged += new System.EventHandler(this.textbox2_TextChanged);
             // 
-            // textBox1
+            // textBox3
             // 
-            this.textBox1.Location = new System.Drawing.Point(31, 120);
-            this.textBox1.Name = "textBox1";
-            this.textBox1.Size = new System.Drawing.Size(100, 20);
-            this.textBox1.TabIndex = 2;
+            this.textBox3.Location = new System.Drawing.Point(31, 120);
+            this.textBox3.Name = "textBox3";
+            this.textBox3.Size = new System.Drawing.Size(100, 20);
+            this.textBox3.TabIndex = 2;
             // 
             // label1
             // 
@@ -114,9 +116,9 @@
             this.Controls.Add(this.label3);
             this.Controls.Add(this.label2);
             this.Controls.Add(this.label1);
-            this.Controls.Add(this.textBox1);
-            this.Controls.Add(this.LastName);
-            this.Controls.Add(this.FirstName);
+            this.Controls.Add(this.textBox3);
+            this.Controls.Add(this.textbox2);
+            this.Controls.Add(this.textbox);
             this.Name = "Form1";
             this.Text = "Form1";
             this.Load += new System.EventHandler(this.Form1_Load);
@@ -127,9 +129,9 @@
 
         #endregion
 
-        private System.Windows.Forms.TextBox FirstName;
-        private System.Windows.Forms.TextBox LastName;
-        private System.Windows.Forms.TextBox textBox1;
+        private System.Windows.Forms.TextBox textbox;
+        private System.Windows.Forms.TextBox textbox2;
+        private System.Windows.Forms.TextBox textBox3;
         private System.Windows.Forms.Label label1;
         private System.Windows.Forms.Label label2;
         private System.Windows.Forms.Label label3;

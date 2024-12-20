@@ -19,7 +19,7 @@ namespace User
         public Connect()
         {
             Host = "localhost";
-            Database = "User";
+            Database = "user";
             User = "root";
             Password = "";
 

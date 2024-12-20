@@ -31,5 +31,17 @@ namespace User
 
         private void button1_Click(object sender, EventArgs e)
         {
+            
         }
+        string Firstname = "";
+        private void FirstName_TextChanged(object sender, EventArgs e)
+        {
+            
+        }
+
+        private void textbox2_TextChanged(object sender, EventArgs e)
+        {
+
+        }
+    }
 }
