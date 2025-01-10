@@ -3,7 +3,7 @@
 -- https://www.phpmyadmin.net/
 --
 -- Gép: 127.0.0.1
--- Létrehozás ideje: 2024. Dec 20. 10:36
+-- Létrehozás ideje: 2025. Jan 10. 12:13
 -- Kiszolgáló verziója: 10.4.20-MariaDB
 -- PHP verzió: 7.3.29
 
@@ -32,7 +32,7 @@ CREATE TABLE `data` (
   `FirstName` varchar(50) NOT NULL,
   `LastName` varchar(50) NOT NULL,
   `Password` varchar(36) NOT NULL,
-  `CreatedTime` datetime NOT NULL,
+  `CreatedTime` datetime NOT NULL DEFAULT current_timestamp(),
   `UpdatedTime` datetime NOT NULL DEFAULT current_timestamp()
 ) ENGINE=InnoDB DEFAULT CHARSET=utf8mb4;
 
@@ -60,7 +60,10 @@ INSERT INTO `data` (`ID`, `FirstName`, `LastName`, `Password`, `CreatedTime`, `U
 (17, 'Albert', 'Chantrell', 'nP4}hEa4,qtk', '2024-11-03 05:28:02', '2024-12-20 09:45:32'),
 (18, 'Denna', 'Callway', 'kE2`rIXY#\'', '2024-12-11 07:05:26', '2024-12-20 09:45:32'),
 (19, 'Adel', 'Gornar', 'wA6,v/_KDuNi5lm', '2024-12-02 16:06:09', '2024-12-20 09:45:32'),
-(20, 'Mirabel', 'Braemer', 'bB7*4@w`J', '2024-08-10 20:33:59', '2024-12-20 09:45:32');
+(20, 'Mirabel', 'Braemer', 'bB7*4@w`J', '2024-08-10 20:33:59', '2024-12-20 09:45:32'),
+(21, 'Kiss', 'Adam', 'Uborka123', '0000-00-00 00:00:00', '2025-01-10 11:20:48'),
+(22, 'asdasd', 'asdasd', 'asdasd123', '0000-00-00 00:00:00', '2025-01-10 11:21:44'),
+(23, 'gfgf', 'gfgf', 'gfgf123', '2025-01-10 12:10:38', '2025-01-10 12:10:38');
 
 --
 -- Indexek a kiírt táblákhoz
@@ -80,7 +83,7 @@ ALTER TABLE `data`
 -- AUTO_INCREMENT a táblához `data`
 --
 ALTER TABLE `data`
-  MODIFY `ID` int(11) NOT NULL AUTO_INCREMENT, AUTO_INCREMENT=21;
+  MODIFY `ID` int(11) NOT NULL AUTO_INCREMENT, AUTO_INCREMENT=24;
 COMMIT;
 
 /*!40101 SET CHARACTER_SET_CLIENT=@OLD_CHARACTER_SET_CLIENT */;
