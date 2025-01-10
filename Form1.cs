@@ -31,9 +31,21 @@ namespace User
 
         private void button1_Click(object sender, EventArgs e)
         {
-            
+            string jelszo = (string)textBox3.Text;
+            string veznev = (string)textbox.Text;
+            MessageBox.Show("Nincs felhasználó");
+            label4.Visible = true;
+            label2.Visible = true;
+            label5.Visible = true;
+            textBox1.Visible = true;
+            textbox2.Visible = true;
+            textBox4.Visible = true;
+            button2.Visible = true;
+            label1.Visible = false;
+            label3.Visible = false;
+
         }
-        string Firstname = "";
+        
         private void FirstName_TextChanged(object sender, EventArgs e)
         {
             
@@ -43,5 +55,17 @@ namespace User
         {
 
         }
+
+        private void label2_Click(object sender, EventArgs e)
+        {
+
+        }
+
+        private void label1_Click_1(object sender, EventArgs e)
+        {
+
+        }
+
+        
     }
 }
