@@ -5,6 +5,7 @@ using System.ComponentModel;
 using System.Data;
 using System.Drawing;
 using System.Linq;
+using System.Security.Cryptography.X509Certificates;
 using System.Text;
 using System.Threading.Tasks;
 using System.Windows.Forms;
@@ -140,6 +141,78 @@ namespace User
             catch (Exception)
             {
                 MessageBox.Show("Nem jó az adatbázis kapcsolódása");
+            }
+        }
+
+        private void listBox1_SelectedIndexChanged(object sender, EventArgs e)
+        {
+        }
+
+        private void button3_Click(object sender, EventArgs e)
+        {
+            conn.Connection.Open();
+
+            string sql = "SELECT `ID`, `FirstName`, `LastName`, `CreatedTime`, `UpdatedTime` FROM `data` WHERE 1";
+
+            MySqlCommand cmd = new MySqlCommand(sql, conn.Connection);
+
+            MySqlDataReader dr = cmd.ExecuteReader();
+
+
+            dr.Read();
+
+            do
+            {
+                var felhasznalo = new
+                {
+                    IDAdatbazis = dr.GetInt32(0),
+                    VezeteknevAdatbazis = dr.GetString(1),
+                    KeresztnevAdatbazis = dr.GetString(2),
+                    CreatedTimeAdatbazis = dr.GetMySqlDateTime(3),
+                    UpdatedTimeAdatbazis = dr.GetMySqlDateTime(4),
+
+                };
+
+                listBox1.Items.Add(felhasznalo.IDAdatbazis + " , " + felhasznalo.VezeteknevAdatbazis+ " , " + felhasznalo.KeresztnevAdatbazis + " , " + felhasznalo.CreatedTimeAdatbazis + " , " + felhasznalo.UpdatedTimeAdatbazis);
+
+            }
+            while (dr.Read());
+
+
+            dr.Close();
+            conn.Connection.Close();
+        }
+
+        private void button4_Click(object sender, EventArgs e)
+        {
+            try
+            {
+                string sor = listBox1.SelectedItem.ToString();
+
+                string[] felvag = sor.Split(',');
+
+                string id = "";
+                if (felvag.Length > 0)
+                {
+                    id = felvag[0].Trim();
+                }
+                conn.Connection.Open();
+
+                string sql = $"DELETE FROM `data` WHERE `ID` = {id};";
+
+                MySqlCommand cmd = new MySqlCommand(sql, conn.Connection);
+                cmd.ExecuteNonQuery();
+
+                conn.Connection.Close();
+
+                MessageBox.Show("Sikeres Törlés");
+                listBox1.Items.Remove(sor);
+            }
+            catch (Exception)
+            {
+
+                MessageBox.Show("Hiba az ID ban");
+
             }
         }
     }
